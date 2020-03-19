@@ -218,8 +218,8 @@ public class PlayerControler : MonoBehaviour
 
         if (LockMouvement == false)
         {
-            print(sideCheckerLeftScript.IsCollidingWall());
-            if (Input.GetKey(rightkey)&&!sideCheckerRightScript.IsCollidingWall())
+            //print(sideCheckerLeftScript.IsCollidingWall());
+            if (Input.GetKey(rightkey) && !sideCheckerRightScript.IsCollidingWall()) //&&!sideCheckerRightScript.IsCollidingWall()
             {
                 directiondroite = true;
                 myrigibody.velocity = new Vector3(movespeed, myrigibody.velocity.y, 0);
@@ -227,7 +227,7 @@ public class PlayerControler : MonoBehaviour
                 animator.SetFloat("Speed", 1);
             }
 
-            if (Input.GetKey(leftkey)&&!sideCheckerLeftScript.IsCollidingWall())
+            if (Input.GetKey(leftkey) && !sideCheckerLeftScript.IsCollidingWall()) //&&!sideCheckerLeftScript.IsCollidingWall()
             {
                 directiondroite = false;
                 myrigibody.velocity = new Vector3(-movespeed, myrigibody.velocity.y, 0);
@@ -288,6 +288,7 @@ public class PlayerControler : MonoBehaviour
        
     }
 
+
     void StopMove()
     {
         if (Input.GetKeyUp(rightkey))
@@ -329,6 +330,5 @@ public class PlayerControler : MonoBehaviour
 
 
     }
-
 
 }

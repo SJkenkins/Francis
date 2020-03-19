@@ -26,7 +26,7 @@ public class MenuManager : MonoBehaviour
         menuobj = !menuobj;
     }
 
-
+    //activate menu
     public void ActivateMenu()
     {
         menuGroup.SetActive(true);
