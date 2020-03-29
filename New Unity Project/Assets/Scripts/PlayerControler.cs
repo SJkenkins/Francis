@@ -77,6 +77,8 @@ public class PlayerControler : MonoBehaviour
         
     }
 
+    // Sounds
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.name == "Jump")
@@ -100,6 +102,8 @@ public class PlayerControler : MonoBehaviour
         
     }
 
+    // Detection of the ground
+
     void RaycastUpdate()
     {
         ray = new Ray(transform.position, new Vector3(0, -0.00005f, 0));
@@ -118,7 +122,7 @@ public class PlayerControler : MonoBehaviour
         //TouchingWall = Physics2D.Raycast(WallCheck.position, transform.right, wallcheckDistance);
     }
 
-    
+    // Jump
 
     public void JumpUpdate()
     {
@@ -163,6 +167,8 @@ public class PlayerControler : MonoBehaviour
 
         }
     }
+
+    // Dash
 
     public void DashUpdate()
     {

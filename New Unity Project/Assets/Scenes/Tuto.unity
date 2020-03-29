@@ -390,7 +390,7 @@ GameObject:
   - component: {fileID: 83431593}
   - component: {fileID: 83431592}
   m_Layer: 0
-  m_Name: Tuto410000
+  m_Name: Display_Tutorial5_Dash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33315,7 +33315,7 @@ GameObject:
   - component: {fileID: 728650967}
   - component: {fileID: 728650966}
   m_Layer: 0
-  m_Name: Tuto310000
+  m_Name: Display_Tutorial4_DoubleJump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33832,7 +33832,7 @@ GameObject:
   - component: {fileID: 964167208}
   - component: {fileID: 964167209}
   m_Layer: 0
-  m_Name: Display_TutorialMoves
+  m_Name: Display_Tutorial1_Moves
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35009,7 +35009,7 @@ GameObject:
   - component: {fileID: 1516772243}
   - component: {fileID: 1516772242}
   m_Layer: 0
-  m_Name: Tuto210000
+  m_Name: Display_Tutorial2_Jump1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45889,7 +45889,7 @@ GameObject:
   - component: {fileID: 1866463860}
   - component: {fileID: 1866463859}
   m_Layer: 0
-  m_Name: Tuto210000 (1)
+  m_Name: Display_Tutorial3_Jump2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
