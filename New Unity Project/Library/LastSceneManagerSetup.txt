@@ -1,5 +1,9 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/Testing room.unity
+=======
+- path: Assets/Scenes/Cutscene 3.unity
+>>>>>>> master
   isLoaded: 1
   isActive: 1
   isSubScene: 0

@@ -1047,7 +1047,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &910084849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1400,17 +1400,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     sentences:
-    - "R\xE9veille-toi, h\xE9ros"
-    - Le monde est en ruines
-    - Il ne reste que toi
-    - "Tu dois trouver les 108 \xE9toiles"
-    - "Et ramener ce monde \xE0 la vie"
-    - "Deviens mon avatar, h\xE9ros !"
-    - Arpente les ruines du monde
-    - "Utilise le pouvoir des \xE9toiles"
-    - Et sauve le monde !
-    - '.    .    . '
-    - "Courage, h\xE9ros !"
+    - 'This is the story '
+    - of a certain someone
+    - who woke up, one day
+    - completely alone in his world.
+    - '"Why am I alone?"'
+    - did he ask the Sky
+    - but the Sky did not answer.
+    - '"Curse you, Sky"'
+    - he shouted angrily
+    - but still, the Sky was quiet
+    - .    .    .
+    - Our hero was confused
+    - '"What should I do?"'
+    - Did he ask himself
+    - .     .     .
+    - He didn't really knew
+    - 'Should he go ask the Sky '
+    - once more?
+    - Maybe he should
+    - Or maybe he shouldn't
+    - It wasn't really his choice anyway
+    - .     .     .
 --- !u!114 &1088181597
 MonoBehaviour:
   m_ObjectHideFlags: 0
