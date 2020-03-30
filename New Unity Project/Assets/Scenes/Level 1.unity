@@ -103285,6 +103285,7 @@ MonoBehaviour:
   attackkey: 0
   myrigibody: {fileID: 1885400576}
   isGrounded: 1
+  isOnWall: 0
   attackbool: 0
   directiondroite: 0
   LockMouvement: 0

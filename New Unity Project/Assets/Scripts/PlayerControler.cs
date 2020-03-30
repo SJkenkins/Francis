@@ -35,11 +35,14 @@ public class PlayerControler : MonoBehaviour
     public Rigidbody2D myrigibody;
 
     public bool isGrounded;
+    public bool isOnWall;
     public bool attackbool;
     public bool directiondroite;
     public bool LockMouvement ;
     public bool TouchingWall;
     public Ray ray;
+    public Ray rayleft;
+    public Ray rayright;
 
     public LayerMask jumplayer;
     public float fallMultiplicateur = 1.01f;
@@ -102,10 +105,12 @@ public class PlayerControler : MonoBehaviour
         
     }
 
-    // Detection of the ground
+    // Detection of the ground and the walls
 
     void RaycastUpdate()
     {
+        // Detection of the ground
+
         ray = new Ray(transform.position, new Vector3(0, -0.00005f, 0));
         Debug.DrawRay(ray.origin, ray.direction);
 
@@ -119,11 +124,25 @@ public class PlayerControler : MonoBehaviour
             isGrounded = false;
         }
 
+        // Detection of the Walls
+
+        rayleft = new Ray(transform.position, new Vector3(-0.00005f, 0, 0));
+        rayright = new Ray(transform.position, new Vector3(0.00005f, 0, 0));
+
+        if (Physics2D.Raycast(rayleft.origin, rayleft.direction, 1, jumplayer) || Physics2D.Raycast(rayright.origin, rayright.direction, 1, jumplayer))
+        {
+            isOnWall = true;
+        }
+        else
+        {
+            isOnWall = false;
+        }
+
         //TouchingWall = Physics2D.Raycast(WallCheck.position, transform.right, wallcheckDistance);
     }
 
     // Jump
-
+        
     public void JumpUpdate()
     {
         if (isGrounded == true)
@@ -162,6 +181,13 @@ public class PlayerControler : MonoBehaviour
                         jumpcount = 0;
                     }
 
+                }
+
+                if (isOnWall == true)
+                {
+                    jumpcount = 10;
+                    GetComponent<AudioSource>().Play();
+                    myrigibody.velocity = new Vector3(myrigibody.velocity.x, jumpspeed, 0);
                 }
             }
 
@@ -225,7 +251,7 @@ public class PlayerControler : MonoBehaviour
         if (LockMouvement == false)
         {
             //print(sideCheckerLeftScript.IsCollidingWall());
-            if (Input.GetKey(rightkey) && !sideCheckerRightScript.IsCollidingWall()) //&&!sideCheckerRightScript.IsCollidingWall()
+            if (Input.GetKey(rightkey)) //&&!sideCheckerRightScript.IsCollidingWall()
             {
                 directiondroite = true;
                 myrigibody.velocity = new Vector3(movespeed, myrigibody.velocity.y, 0);
@@ -233,7 +259,7 @@ public class PlayerControler : MonoBehaviour
                 animator.SetFloat("Speed", 1);
             }
 
-            if (Input.GetKey(leftkey) && !sideCheckerLeftScript.IsCollidingWall()) //&&!sideCheckerLeftScript.IsCollidingWall()
+            if (Input.GetKey(leftkey)) //&&!sideCheckerLeftScript.IsCollidingWall()
             {
                 directiondroite = false;
                 myrigibody.velocity = new Vector3(-movespeed, myrigibody.velocity.y, 0);
