@@ -35,7 +35,8 @@ public class PlayerControler : MonoBehaviour
     public Rigidbody2D myrigibody;
 
     public bool isGrounded;
-    public bool isOnWall;
+    public bool isOnWallLeft = false;
+    public bool isOnWallRight = false;
     public bool attackbool;
     public bool directiondroite;
     public bool LockMouvement ;
@@ -51,9 +52,6 @@ public class PlayerControler : MonoBehaviour
     public Transform attack;
 
     public AudioSource tickSource;
-
-    public SideChecker sideCheckerLeftScript;
-    public SideChecker sideCheckerRightScript;
 
     void Start()
     {
@@ -98,11 +96,7 @@ public class PlayerControler : MonoBehaviour
         {
             Debug.Log("sonpowerup");
             tickSource.Play();
-        }
-
-        
-
-        
+        }        
     }
 
     // Detection of the ground and the walls
@@ -129,13 +123,22 @@ public class PlayerControler : MonoBehaviour
         rayleft = new Ray(transform.position, new Vector3(-0.00005f, 0, 0));
         rayright = new Ray(transform.position, new Vector3(0.00005f, 0, 0));
 
-        if (Physics2D.Raycast(rayleft.origin, rayleft.direction, 1, jumplayer) || Physics2D.Raycast(rayright.origin, rayright.direction, 1, jumplayer))
+
+        if (Physics2D.Raycast(rayleft.origin, rayleft.direction, 1, jumplayer))
         {
-            isOnWall = true;
+            isOnWallLeft = true;
         }
         else
         {
-            isOnWall = false;
+            isOnWallLeft = false;
+        }
+        if (Physics2D.Raycast(rayright.origin, rayright.direction, 1, jumplayer))
+        {
+            isOnWallRight = true;
+        }
+        else
+        {
+            isOnWallRight = false;
         }
 
         //TouchingWall = Physics2D.Raycast(WallCheck.position, transform.right, wallcheckDistance);
@@ -156,18 +159,13 @@ public class PlayerControler : MonoBehaviour
             }
         }
 
-
         if (Input.GetKeyDown(jumpkey))
         {
             if (isGrounded == true)
             {
-                
                 myrigibody.velocity = new Vector3(myrigibody.velocity.x, jumpspeed, 0);
                 jumpcount -= 1;
                 GetComponent<AudioSource>().Play();
-
-                
-
             }
             if (isGrounded == false)
             {
@@ -175,7 +173,6 @@ public class PlayerControler : MonoBehaviour
                 {
                     if (power == 1) 
                     {
-                        
                         GetComponent<AudioSource>().Play();
                         myrigibody.velocity = new Vector3(myrigibody.velocity.x, jumpspeed, 0);
                         jumpcount = 0;
@@ -183,11 +180,11 @@ public class PlayerControler : MonoBehaviour
 
                 }
 
-                if (isOnWall == true)
+                if (isOnWallLeft == true || isOnWallRight == true)
                 {
-                    jumpcount = 10;
                     GetComponent<AudioSource>().Play();
                     myrigibody.velocity = new Vector3(myrigibody.velocity.x, jumpspeed, 0);
+                    jumpcount -= 1;
                 }
             }
 
@@ -251,7 +248,7 @@ public class PlayerControler : MonoBehaviour
         if (LockMouvement == false)
         {
             //print(sideCheckerLeftScript.IsCollidingWall());
-            if (Input.GetKey(rightkey)) //&&!sideCheckerRightScript.IsCollidingWall()
+            if (Input.GetKey(rightkey) && isOnWallRight == false)
             {
                 directiondroite = true;
                 myrigibody.velocity = new Vector3(movespeed, myrigibody.velocity.y, 0);
@@ -259,7 +256,7 @@ public class PlayerControler : MonoBehaviour
                 animator.SetFloat("Speed", 1);
             }
 
-            if (Input.GetKey(leftkey)) //&&!sideCheckerLeftScript.IsCollidingWall()
+            if (Input.GetKey(leftkey) && isOnWallLeft == false)
             {
                 directiondroite = false;
                 myrigibody.velocity = new Vector3(-movespeed, myrigibody.velocity.y, 0);
