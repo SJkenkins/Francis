@@ -387,12 +387,12 @@ GameObject:
   - component: {fileID: 341260646}
   - component: {fileID: 341260651}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Canvas_Fade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &341260646
 Animator:
   serializedVersion: 3
@@ -1164,7 +1164,7 @@ GameObject:
   - component: {fileID: 1448442967}
   - component: {fileID: 1448442966}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Canvas_Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
