@@ -38983,6 +38983,8 @@ MonoBehaviour:
   attackkey: 0
   myrigibody: {fileID: 1159378429}
   isGrounded: 1
+  isOnWallLeft: 0
+  isOnWallRight: 0
   attackbool: 0
   directiondroite: 0
   LockMouvement: 0
@@ -38994,8 +38996,6 @@ MonoBehaviour:
   freeFall: 1.01
   attack: {fileID: 0}
   tickSource: {fileID: 973713540}
-  sideCheckerLeftScript: {fileID: 0}
-  sideCheckerRightScript: {fileID: 0}
 --- !u!212 &1159378431
 SpriteRenderer:
   m_ObjectHideFlags: 0

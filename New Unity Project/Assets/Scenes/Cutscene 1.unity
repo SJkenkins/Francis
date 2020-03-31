@@ -1047,7 +1047,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &910084849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1420,8 +1420,7 @@ MonoBehaviour:
     - once more?
     - Maybe he should
     - Or maybe he shouldn't
-    - It wasn't really his choice anyway
-    - .     .     .
+    - It didn't really mattered anyways
 --- !u!114 &1088181597
 MonoBehaviour:
   m_ObjectHideFlags: 0

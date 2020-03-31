@@ -7,6 +7,7 @@ public class FadeLevel : MonoBehaviour
 {
     public Animator animator;
     private int LevelToLoad;
+    public int LevelPlus;
 
     // Update is called once per frame
     void Update()
@@ -16,7 +17,7 @@ public class FadeLevel : MonoBehaviour
 
     public void FadeToLevel(int LevelIndex)
     {
-
+        
         LevelToLoad = LevelIndex;
         animator.SetTrigger("Fadeout");
        
@@ -24,6 +25,8 @@ public class FadeLevel : MonoBehaviour
 
     public void OnFadeComplete()
     {
+      
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+       
     }
 }

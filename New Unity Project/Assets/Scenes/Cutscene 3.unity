@@ -204,7 +204,7 @@ GameObject:
   - component: {fileID: 20234321}
   - component: {fileID: 20234320}
   m_Layer: 5
-  m_Name: Background (1)
+  m_Name: Ciel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -217,17 +217,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 20234318}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.75, y: 0.8, z: 1}
   m_Children: []
-  m_Father: {fileID: 490262895}
+  m_Father: {fileID: 804223703}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 63}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 1050, y: 437}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &20234320
 MonoBehaviour:
@@ -444,7 +444,7 @@ RectTransform:
   - {fileID: 17943967}
   - {fileID: 803225480}
   m_Father: {fileID: 490262895}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -728,8 +728,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 952517257}
-  - {fileID: 20234319}
+  - {fileID: 804223703}
   - {fileID: 1088181594}
   - {fileID: 177280152}
   - {fileID: 1200990148}
@@ -773,6 +772,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueText: {fileID: 1200990149}
   animator: {fileID: 0}
+  bas: 1
 --- !u!4 &685601075
 Transform:
   m_ObjectHideFlags: 0
@@ -955,6 +955,43 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 803225479}
   m_CullTransparentMesh: 0
+--- !u!1 &804223702
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 804223703}
+  m_Layer: 5
+  m_Name: Background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &804223703
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804223702}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 952517257}
+  - {fileID: 20234319}
+  m_Father: {fileID: 490262895}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &854107026
 GameObject:
   m_ObjectHideFlags: 0
@@ -1042,12 +1079,12 @@ GameObject:
   - component: {fileID: 910084850}
   - component: {fileID: 910084849}
   m_Layer: 5
-  m_Name: Canvas (1)
+  m_Name: Canvas Fade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &910084849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1172,7 +1209,7 @@ GameObject:
   - component: {fileID: 952517259}
   - component: {fileID: 952517258}
   m_Layer: 5
-  m_Name: Background
+  m_Name: Couleur
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1185,17 +1222,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 952517256}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 490262895}
+  m_Father: {fileID: 804223703}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 1.0001221, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 1050, y: 437}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &952517258
 MonoBehaviour:
@@ -1248,7 +1285,7 @@ GameObject:
   - component: {fileID: 1088181596}
   - component: {fileID: 1088181599}
   m_Layer: 5
-  m_Name: Start
+  m_Name: Start (Contient le texte)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1268,7 +1305,7 @@ RectTransform:
   - {fileID: 154520261}
   - {fileID: 854107027}
   m_Father: {fileID: 490262895}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1400,28 +1437,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     sentences:
-    - 'This is the story '
-    - of a certain someone
-    - who woke up, one day
-    - completely alone in his world.
-    - '"Why am I alone?"'
-    - did he ask the Sky
-    - but the Sky did not answer.
-    - '"Curse you, Sky"'
-    - he shouted angrily
-    - but still, the Sky was quiet
-    - .    .    .
-    - Our hero was confused
-    - '"What should I do?"'
-    - Did he ask himself
-    - .     .     .
-    - He didn't really knew
-    - 'Should he go ask the Sky '
-    - once more?
-    - Maybe he should
-    - Or maybe he shouldn't
-    - It wasn't really his choice anyway
-    - .     .     .
+    - This is the story of a certain someone
+    - Who one day woke up all alone
+    - In a strange, broken world
+    - Was he sad?
+    - Maybe . . .
+    - But what could he do anyways?
+    - Did he really want to fight
+    - Against what was unavoidable?
+    - 'Or should he try to enjoy '
+    - what was right before his eyes?
+    - Who knows .  .  .
+    - It didn't really mattered anyways
 --- !u!114 &1088181597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1610,7 +1637,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 490262895}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -1670,7 +1697,7 @@ GameObject:
   - component: {fileID: 1297557519}
   - component: {fileID: 1297557518}
   m_Layer: 0
-  m_Name: Main Camera (1)
+  m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -9,6 +9,7 @@ public class DialogueManager : MonoBehaviour
     public Text dialogueText ;
 
     public Animator animator;
+    public bool bas;
 
     private Queue<string> sentences;
 
@@ -20,15 +21,16 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
-        Debug.Log("Début de la cinématique");
+        //Debug.Log("Début de la cinématique");
 
         sentences.Clear();
-
+        
         foreach (string sentence in dialogue.sentences)
         {
-            sentences.Enqueue(sentence);
-
             
+            sentences.Enqueue(sentence);
+            
+
         }
 
         DisplayNextSentence();
@@ -61,10 +63,19 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    // Fin du dialogue / de la cinématique --> Changement de scène
     void EndDialogue()
     {
-        Debug.Log("fin");
-        FindObjectOfType<FadeLevel>().FadeToLevel(SceneManager.GetActiveScene().buildIndex + 1);
+        //Debug.Log("fin");
+        // 
+        if (bas == true)
+        {
+            FindObjectOfType<FadeLevel>().FadeToLevel(SceneManager.GetActiveScene().buildIndex + 2);
+        }
+        else
+        {
+            FindObjectOfType<FadeLevel>().FadeToLevel(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 
 }

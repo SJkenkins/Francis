@@ -53,6 +53,8 @@ public class PlayerControler : MonoBehaviour
 
     public AudioSource tickSource;
 
+    public bool Path ;
+
     void Start()
     {
         animator.SetFloat("Speed", 0);

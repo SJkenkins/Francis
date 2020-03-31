@@ -11,6 +11,8 @@ public class TransitionTuto : MonoBehaviour
     public GameObject Ennemy;
     public Camera Camera;
     public bool tuto;
+    public bool haut;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -33,15 +35,31 @@ public class TransitionTuto : MonoBehaviour
             // La transition est particulière pour le tuto, donc on crée un cas spécifique avec le bool tuto --> on peut créer d'autres bool pour faire d'autres animations
             //spécifiques si besoin
             if(tuto == true) {
+                
                 Camera.GetComponent<AudioSource>().Stop();
                 Canvas.SetActive(true);
                 Player.gameObject.GetComponent<PlayerControler>().SpawnFX();
                 Player.SetActive(false);
                 Animatortrans.SetTrigger("Transition");
+                
             }
+
+            if (haut == true)
+            {
+                //Pour gérer les fins multiples, on va au niveau N+2 si on prend le chemin du haut, N+1 si on prend le chemin du bas.
+                Camera.GetComponent<AudioSource>().Stop();
+                Canvas.SetActive(true);
+                Player.gameObject.GetComponent<PlayerControler>().SpawnFX();
+                Player.SetActive(false);
+                Animatortrans.SetTrigger("Transition");
+                Player.SetActive(true);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+            }
+
             else
             {
                 //L'animation de base, on désactive le player, et on lance le fade
+                
                 Camera.GetComponent<AudioSource>().Stop();
                 Canvas.SetActive(true);
                 Player.SetActive(false);
@@ -53,10 +71,13 @@ public class TransitionTuto : MonoBehaviour
 
         }
     }
-    // Une fois la transition "cinématique" terminée, on 
+    // Une fois la transition "cinématique" terminée, on change de scène 
     public void OnFadeComplete()
     {
-        Player.SetActive(true);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+       
+            Debug.Log("bas");
+            Player.SetActive(true);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        
     }
 }
